@@ -46,7 +46,7 @@ import urllib.request
 #     "name": "Paris",
 #     "cod": 200
 # }
-with urllib.request.urlopen("https://api.openweathermap.org/data/2.5/weather?lat=41.3828939&lon=2.1774322&units=metric&appid=c0497dd9e71423ed886bc60c25448b7a") as url:
+with urllib.request.urlopen("https://api.openweathermap.org/data/2.5/weather?lat=41.3828939&lon=2.1774322&units=metric&appid=XXXXXXXXXXXXXXXXXXX") as url:
   data = json.loads(url.read().decode())
   str = " " + str(data['main']['temp']) + "°C "
   # https://openweathermap.org/weather-conditions#Weather-Condition-Codes-2
