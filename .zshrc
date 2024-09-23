@@ -119,6 +119,8 @@ export PATH="$FLYCTL_INSTALL/bin:$PATH"
 #alias docker-compose=podman-compose
 alias k2folder=/home/hudsonbay/workspace/kay-two/
 
+alias copy="xclip -selection clipboard"
+
 #
 # FUNCTIONS
 #
