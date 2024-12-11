@@ -19,5 +19,5 @@ sudo pacman -Sy autotiling lazygit xclip
 ## Other useful apps I like to install
 
 ```bash
-yay -Sy wps-office zoom visual-studio-code-bin brave-bin slack-desktop spotify emocli
+yay -Sy wps-office zoom visual-studio-code-bin brave-bin slack-desktop spotify emocli ttf-jetbrains-mono
 ```
