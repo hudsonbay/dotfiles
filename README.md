@@ -7,7 +7,7 @@ My Arch Linux configuration files for `i3`, `alacritty`, `zsh`.
 ## Pre-install
 
 ```zsh
-sudo pacman -Sy autotiling lazygit xclip
+sudo pacman -Sy autotiling lazygit xclip bat
 ```
 
 ## Important notes
