@@ -139,7 +139,8 @@ exec_always autotiling -w 1 3 5 7 9
 ######################################
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+#bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec ghostty
 
 # kill focused window
 bindsym $mod+q kill
@@ -337,6 +338,9 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #exec --no-startup-id dex -a -s /etc/xdg/autostart/:~/.config/autostart/
 exec --no-startup-id dex --autostart --environment i3
 
+# setup wallpaper
+exec_always --no-startup-id feh --bg-scale /home/hudsonbay/Pictures/Wallpapers/Best/contact-visual.png --bg-scale /home/hudsonbay/Pictures/Wallpapers/Best/surreal_pyramids_4k.jpg
+
 # start welcome app
 #exec --no-startup-id sh /usr/share/endeavouros/scripts/welcome --startdelay=3
 
@@ -472,7 +476,7 @@ bar {
 
 # When strip_workspace_numbers is set to yes,
 # any workspace that has a name of the form
-# â€œ[n][:][NAME]â€ will display only the name.
+# “[n][:][NAME]” will display only the name.
 strip_workspace_numbers yes
 ##strip_workspace_name no
 
@@ -503,7 +507,7 @@ strip_workspace_numbers yes
 #
 # When strip_workspace_numbers is set to yes,
 # any workspace that has a name of the form
-# â€œ[n][:][NAME]â€ will display only the name.
+# “[n][:][NAME]” will display only the name.
 #strip_workspace_numbers yes
 ##strip_workspace_name no
 #

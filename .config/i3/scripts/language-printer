@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# Muestra el layout de teclado actual
+#KiBD=$(setxkbmap -query | grep layout | awk '{print $2}')
+#echo $KBD
+
+#exec_always "setxkbmap -layout us,ru -variant intl,es ,, -option grp:alt_shift_toggle"
+
+# Obtener el idioma actual
+CURR_LANG="$(setxkbmap -print | grep xkb_symbols | awk '{print $4}' | awk -F"+" '{print $2}')"
+
+# Idiomas disponibles
+US="us"
+RU="ru"
+ES="es(nodeadkeys)"
+
+#echo $CURR_LANG
+
+# Cambiar el idioma de acuerdo con el estado actual
+#if [ "$CURR_LANG" == "$US" ]; then
+#    setxkbmap $RU -variant intl,es ,, # Si está en inglés (us), cambiar a us(intl)
+#elif [ "$CURR_LANG" == "$RU" ]; then
+#    setxkbmap $ES -variant intl,es ,,   # Si está en inglés (intl), cambiar a español
+#elif [ "$CURR_LANG" == "$ES" ]; then
+#    setxkbmap $US -variant intl,es ,,   # Si está en español, cambiar a inglés (us)
+#else
+#    setxkbmap $US -variant intl,es ,,   # Por defecto, cambiar a inglés (us)
+#fi
+
+
+#CURR_LANG="$(setxkbmap -print | grep xkb_symbols | awk '{print $4}' | awk -F"+" '{print $2}')"
+#US="us"
+#INTL="us(intl)"
+#ES="es"
+
+#if [ $CURR_LANG == $INTL ]
+#then
+#	echo "INTL"
+#elif [ $CURR_LANG == $DE ]
+#then
+#	echo "ES"
+#elif [ $CURR_LANG == $US ]
+#then
+#	echo "US"
+#else
+#	echo "US"
+#fi

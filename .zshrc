@@ -101,15 +101,22 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 export BROWSER="/usr/bin/brave"
-. /opt/asdf-vm/asdf.sh
-
-
 export PATH=$PATH:~/.bin
 export GIT_EDITOR=nvim
+export TERMINAL=alacritty
+export EDITOR=/usr/bin/nvim
+export VISUAL=/usr/bin/nvim
 
 # fly.io
 export FLYCTL_INSTALL="/home/hudsonbay/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
+#. /opt/asdf-vm/asdf.sh
+. $HOME/.asdf/asdf.sh
+#export PATH="/opt/asdf-vm:$PATH"
+
+# Rust
+. "$HOME/.cargo/env" 
 
 #
 # ALIASES
@@ -119,52 +126,72 @@ export PATH="$FLYCTL_INSTALL/bin:$PATH"
 #alias docker-compose=podman-compose
 alias k2folder=/home/hudsonbay/workspace/kay-two/
 
+# make sure the --git-dir is the same as the
+# directory where you created the repo above.
+alias config="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+
 alias copy="xclip -selection clipboard"
+
+alias cdscriptsfolder="cd /home/hudsonbay/workspace/alvivis-aws-scripts"
+
+#alias pr_details="~/./git_diff_report.sh . develop $(git branch --show-current) | copy"
 
 #
 # FUNCTIONS
 #
 
 function downgrade_docker() {
-sudo pacman -U /var/cache/pacman/pkg/docker-1:20.10.22-1-x86_64.pkg.tar.zst /var/cache/pacman/pkg/docker-compose-2.14.2-1-x86_64.pkg.tar.zst
+    sudo pacman -U /var/cache/pacman/pkg/docker-1:20.10.22-1-x86_64.pkg.tar.zst /var/cache/pacman/pkg/docker-compose-2.14.2-1-x86_64.pkg.tar.zst
 }
 
-function k2web(){
-docker exec -it kay-two-kay_two-1 sh
+function k2web() {
+    docker exec -it kay-two-kay_two-1 sh
 }
 
 function k2pg() {
-docker exec -it kay-two-postgres-1 sh -c "psql -U kay_two -W kay_two"
+    docker exec -it kay-two-postgres-1 sh -c "psql -U kay_two -W kay_two"
 }
 
-function k2(){
-k2folder && code .
+function k2() {
+    k2folder && code .
 }
 
-function k2bak(){
-cd /home/hudsonbay/workspace/kay-two-bak/ && code .
+function k2bak() {
+    cd /home/hudsonbay/workspace/kay-two-bak/ && code .
 }
 
-function cleark2(){
-k2folder && sudo rm -rf _build
+function cleark2() {
+    k2folder && sudo rm -rf _build
 }
 
-function reload(){
-source ~/.zshrc
+function reload() {
+    source ~/.zshrc
 }
 
-function cleark2screenshots(){
-cd /home/hudsonbay/workspace/kay-two/ && sudo rm -rf apps/admin/screenshots && sudo rm -rf screenshots/ && sudo rm -rf apps/api/screenshots && sudo rm -rf apps/kay_two/screenshots
+function cleark2screenshots() {
+    cd /home/hudsonbay/workspace/kay-two/ && sudo rm -rf apps/admin/screenshots && sudo rm -rf screenshots/ && sudo rm -rf apps/api/screenshots && sudo rm -rf apps/kay_two/screenshots
 }
 
-function chslaptop(){
-xrandr --output eDP1 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output DP3 --off --output DP4 --off --output HDMI1 --off --output HDMI2 --off --output HDMI3 --off --output VIRTUAL1 --off
+function chslaptop() {
+    xrandr --output eDP1 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output DP3 --off --output DP4 --off --output HDMI1 --off --output HDMI2 --off --output HDMI3 --off --output VIRTUAL1 --off
 }
 
-function chsside(){
-xrandr --output eDP1 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output DP3 --off --output DP4 --off --output HDMI1 --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI2 --off --output HDMI3 --off --output VIRTUAL1 --off
+function chsside() {
+    xrandr --output eDP1 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output DP3 --off --output DP4 --off --output HDMI1 --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI2 --off --output HDMI3 --off --output VIRTUAL1 --off
 }
 
-function chsvertical(){
-xrandr --output eDP1 --primary --mode 1920x1200 --pos 0x1080 --rotate normal --output DP1 --off --output DP2 --off --output DP3 --off --output DP4 --off --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI2 --off --output HDMI3 --off --output VIRTUAL1 --off
+function chsvertical() {
+    xrandr --output eDP1 --primary --mode 1920x1200 --pos 0x1080 --rotate normal --output DP1 --off --output DP2 --off --output DP3 --off --output DP4 --off --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI2 --off --output HDMI3 --off --output VIRTUAL1 --off
 }
+
+export PATH=$HOME/.local/bin:$PATH
+
+export GPG_TTY=$(tty)
+
+export GPG_TTY=$(tty)
+
+export GPG_TTY=$(tty)
+
+export GPG_TTY=$(tty)
+
+export GPG_TTY=$(tty)

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Obtener el idioma actual
+CURR_LANG="$(setxkbmap -print | grep xkb_symbols | awk '{print $4}' | awk -F"+" '{print $2}')"
+
+# Definir los idiomas
+US="us"
+RU="ru"
+
+# Cambiar el idioma a ruso si no está ya en ruso
+if [ "$CURR_LANG" != "$RU" ]; then
+    setxkbmap $RU
+    echo "🇷🇺"  # Bandera de Rusia
+else
+    setxkbmap $US
+    echo "🇬🇧"  # Bandera del Reino Unido
+fi
