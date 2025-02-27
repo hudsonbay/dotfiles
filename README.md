@@ -2,7 +2,7 @@
 
 # dotfiles
 
-My Arch Linux configuration files for `i3`, `alacritty`, `zsh`.
+My Arch Linux configuration files for `i3`, `alacritty`, `zsh`, `zed`.
 
 ## Pre-install
 
